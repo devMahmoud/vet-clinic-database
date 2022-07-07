@@ -76,7 +76,7 @@ VALUES (
     'Feb-08-2020',
     0,
     false,
-    11
+    -11
 );
 
 INSERT INTO animals (
@@ -91,7 +91,7 @@ VALUES (
     'Nov-15-2021',
     2,
     true,
-    5.7
+    -5.7
 );
 
 INSERT INTO animals (
@@ -106,7 +106,7 @@ VALUES (
     'Apr-02-1993',
     3,
     false,
-    12.13
+    -12.13
 );
 
 INSERT INTO animals (
@@ -121,7 +121,7 @@ VALUES (
     'Jun-12-2005',
     1,
     true,
-    45
+    -45
 );
 
 INSERT INTO animals (
