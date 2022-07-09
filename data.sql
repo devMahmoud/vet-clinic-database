@@ -242,3 +242,156 @@ UPDATE animals
  SET owner_id=(SELECT id FROM owners WHERE full_name ='Dean Winchester')
   WHERE name IN ('Angemon', 'Boarmon')
 ;
+
+INSERT INTO vets (
+    name,
+    age,
+    date_of_graduation
+)
+VALUES (
+    'William Tatcher',
+    45,
+    'Apr-23-2000'
+),
+(
+    'Maisy Smith',
+    26,
+    'Jan-17-2019'
+),
+(
+    'Stephanie Mendez',
+    64,
+    'May-04-1981'
+),
+(
+    'Jack Harkness',
+    38,
+    'Jun-08-2008'
+);
+
+INSERT INTO specializations (
+    species_id,
+    vet_id
+)
+VALUES (
+    (SELECT id FROM species WHERE species.name = 'Pokemon'),
+    (SELECT id FROM vets WHERE vets.name = 'William Tatcher')
+),
+(
+    (SELECT id FROM species WHERE species.name = 'Digimon'),
+    (SELECT id FROM vets WHERE vets.name = 'Stephanie Mendez')
+),
+(
+    (SELECT id FROM species WHERE species.name = 'Pokemon'),
+    (SELECT id FROM vets WHERE vets.name = 'Stephanie Mendez')
+),
+(
+    (SELECT id FROM species WHERE species.name = 'Digimon'),
+    (SELECT id FROM vets WHERE vets.name = 'Jack Harkness')
+);
+
+INSERT INTO visits (
+    animal_id,
+    vet_id,
+    date_of_visit
+)
+VALUES (
+    (SELECT id FROM animals WHERE animals.name = 'Agumon'),
+    (SELECT id FROM vets WHERE vets.name = 'William Tatcher'),
+    'May-24-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Agumon'),
+    (SELECT id FROM vets WHERE vets.name = 'Stephanie Mendez'),
+    'Jul-22-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Gabumon'),
+    (SELECT id FROM vets WHERE vets.name = 'Jack Harkness'),
+    'Feb-02-2021'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Pikachu'),
+    (SELECT id FROM vets WHERE vets.name = 'Maisy Smith'),
+    'Jan-05-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Pikachu'),
+    (SELECT id FROM vets WHERE vets.name = 'Maisy Smith'),
+    'Mar-08-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Pikachu'),
+    (SELECT id FROM vets WHERE vets.name = 'Maisy Smith'),
+    'May-14-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Devimon'),
+    (SELECT id FROM vets WHERE vets.name = 'Stephanie Mendez'),
+    'May-04-2021'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Charmander'),
+    (SELECT id FROM vets WHERE vets.name = 'Jack Harkness'),
+    'Feb-24-2021'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Plantmon'),
+    (SELECT id FROM vets WHERE vets.name = 'Maisy Smith'),
+    'Dec-21-2019'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Plantmon'),
+    (SELECT id FROM vets WHERE vets.name = 'William Tatcher'),
+    'Aug-10-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Plantmon'),
+    (SELECT id FROM vets WHERE vets.name = 'Maisy Smith'),
+    'Apr-07-2021'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Squirtle'),
+    (SELECT id FROM vets WHERE vets.name = 'Stephanie Mendez'),
+    'Sep-29-2019'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Angemon'),
+    (SELECT id FROM vets WHERE vets.name = 'Jack Harkness'),
+    'Oct-03-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Angemon'),
+    (SELECT id FROM vets WHERE vets.name = 'Jack Harkness'),
+    'Nov-04-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Boarmon'),
+    (SELECT id FROM vets WHERE vets.name = 'Maisy Smith'),
+    'Jan-24-2019'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Boarmon'),
+    (SELECT id FROM vets WHERE vets.name = 'Maisy Smith'),
+    'May-15-2019'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Boarmon'),
+    (SELECT id FROM vets WHERE vets.name = 'Maisy Smith'),
+    'Feb-27-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Boarmon'),
+    (SELECT id FROM vets WHERE vets.name = 'Maisy Smith'),
+    'Aug-03-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Blossom'),
+    (SELECT id FROM vets WHERE vets.name = 'Stephanie Mendez'),
+    'May-24-2020'
+),
+(
+    (SELECT id FROM animals WHERE animals.name = 'Blossom'),
+    (SELECT id FROM vets WHERE vets.name = 'William Tatcher'),
+    'Jan-11-2021'
+);
